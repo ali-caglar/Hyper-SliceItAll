@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Vector3 _jumpForce;
-    [SerializeField] private Vector3 _spinTorque;
+    [Header("Jump Forth")]
+    [SerializeField] private Vector3 _jumpForthForce;
+    [SerializeField] private Vector3 _spinForthTorque;
+    [Header("Jump Back")]
+    [SerializeField] private Vector3 _jumpBackForce;
+    [SerializeField] private Vector3 _spinBackTorque;
     
     private Rigidbody _rigidbody;
 
@@ -27,6 +31,12 @@ public class PlayerController : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
+    public void JumpBack()
+    {
+        Jump(-1);
+        Spin(-1);
+    }
+
     private void OnTapHandler()
     {
         _rigidbody.isKinematic = false;
@@ -34,15 +44,19 @@ public class PlayerController : MonoBehaviour
         Spin();
     }
 
-    private void Jump()
+    private void Jump(int direction = 1)
     {
+        Vector3 jumpForce = direction == 1 ? _jumpForthForce : _jumpBackForce;
+        
         _rigidbody.velocity = Vector3.zero;
-        _rigidbody.AddForce(_jumpForce, ForceMode.Impulse);
+        _rigidbody.AddForce(jumpForce, ForceMode.Impulse);
     }
 
-    private void Spin()
+    private void Spin(int direction = 1)
     {
+        Vector3 spinTorque = direction == 1 ? _spinForthTorque : _spinBackTorque;
+        
         _rigidbody.angularVelocity = Vector3.zero;
-        _rigidbody.AddTorque(_spinTorque, ForceMode.Acceleration);
+        _rigidbody.AddTorque(spinTorque, ForceMode.Acceleration);
     }
 }

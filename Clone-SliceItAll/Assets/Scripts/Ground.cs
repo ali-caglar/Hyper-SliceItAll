@@ -25,6 +25,11 @@ public class Ground : MonoBehaviour, IKnifeHit
 
     public void OnKnifesBackHit(PlayerController playerController)
     {
+        if (_isKnifeStuck) return;
+        _isKnifeStuck = true;
+        
+        playerController.JumpBack();
+        StartCoroutine(UnStuckCoroutine());
     }
 
     private void UnStuck()
