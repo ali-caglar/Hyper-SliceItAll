@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
         InputController.OnTap -= OnTapHandler;
     }
 
+    private void Start()
+    {
+        GameManager.Instance.SetGameState(GameState.Start);
+    }
+
     public void Stuck()
     {
         _rigidbody.isKinematic = true;
@@ -39,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTapHandler()
     {
+        GameManager.Instance.SetGameState(GameState.InGame);
+        
         _rigidbody.isKinematic = false;
         Jump();
         Spin();
