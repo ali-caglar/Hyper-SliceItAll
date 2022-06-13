@@ -31,6 +31,11 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.SetGameState(GameState.Start);
     }
 
+    private void FixedUpdate()
+    {
+        _rigidbody.inertiaTensorRotation = Quaternion.identity;
+    }
+
     public void Stuck()
     {
         _rigidbody.isKinematic = true;
