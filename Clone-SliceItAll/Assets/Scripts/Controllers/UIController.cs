@@ -56,8 +56,6 @@ public class UIController : MonoBehaviour
             case GameState.Lose:
                 _loseCanvas.SetActive(CloseOtherCanvases());
                 break;
-            case GameState.Finish:
-                break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
