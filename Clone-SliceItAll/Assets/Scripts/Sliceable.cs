@@ -30,7 +30,9 @@ public class Sliceable : MonoBehaviour, IKnifeHit
         foreach (var part in _rigidbodies)
         {
             part.isKinematic = false;
-            part.AddForce(part.transform.localPosition.x * 250f * Vector3.right);
+            part.AddForce(part.transform.localPosition.y * 5000f * Vector3.up);
         }
+        
+        _particle.Play();
     }
 }
