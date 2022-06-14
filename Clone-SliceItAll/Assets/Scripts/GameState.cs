@@ -2,7 +2,6 @@
 {
     Start,
     InGame,
-    Finish,
     Win,
     Lose
 }
