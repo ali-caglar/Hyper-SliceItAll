@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: b9b79a7d8b3218a4fb1ce74a1e9c3475
+guid: 381ac1455432775429bdc2908dec58b4
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 0.ReflectiveMaterial
-    second: {fileID: 2100000, guid: 7f144ebb2770a27468f13c0b094f96dc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 2.ReflectiveMaterial
-    second: {fileID: 2100000, guid: f11e3fef89a716245ab8f4b4c6be6de2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 4.FlatShadedMaterial
-    second: {fileID: 2100000, guid: 4ab39da6c8fea674cbcf5392cdfc0cac, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
