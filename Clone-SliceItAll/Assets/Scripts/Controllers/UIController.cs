@@ -70,12 +70,12 @@ public class UIController : MonoBehaviour
 
     private void NextLevel()
     {
-        Debug.Log("Next Level");
+        _levelManager.NextLevel();
     }
     
     private void RestartLevel()
     {
-        Debug.Log("Restart");
+        _levelManager.Restart();
     }
 
     private bool CloseOtherCanvases()
