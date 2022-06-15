@@ -18,10 +18,16 @@ public class UIController : MonoBehaviour
 
     [Header("Texts")]
     [SerializeField] private TextMeshProUGUI _feedbackTMP;
+    [SerializeField] private TextMeshProUGUI _currentLevelTMP;
+
+    private LevelManager _levelManager;
 
     private void Awake()
     {
+        _levelManager = FindObjectOfType<LevelManager>();
+
         _startCanvas.SetActive(CloseOtherCanvases());
+        _currentLevelTMP.text = $"LEVEL {_levelManager.CurrentLevel + 1}";
     }
 
     private void OnEnable()
@@ -46,6 +52,7 @@ public class UIController : MonoBehaviour
         {
             case GameState.Start:
                 _startCanvas.SetActive(CloseOtherCanvases());
+                _currentLevelTMP.text = $"LEVEL {_levelManager.CurrentLevel + 1}";
                 break;
             case GameState.InGame:
                 _inGameCanvas.SetActive(CloseOtherCanvases());
