@@ -26,7 +26,7 @@ public class FinishGround : MonoBehaviour, IKnifeHit
 
     public void OnSharpEdgeHit(PlayerController playerController)
     {
-        if (_isKnifeStuck) return;
+        if (_isKnifeStuck || GameManager.Instance.CharacterState == GameState.Win) return;
         _isKnifeStuck = true;
         
         playerController.Stuck();
